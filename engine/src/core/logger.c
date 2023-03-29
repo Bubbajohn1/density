@@ -1,5 +1,6 @@
 #include "logger.h"
 #include "asserts.h"
+#include "platform/platform.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -22,7 +23,7 @@ void log_output(log_level level, const char *message, ...)
                                     "[INFO]: ",
                                     "[DEBUG]: ",
                                     "[TRACE]: "};
-    // b8 isError = level < 2;
+    b8 isError = level < LOG_LEVEL_WARN;
 
     char out_message[32000];
     memset(out_message, 0, sizeof(out_message));
@@ -34,7 +35,15 @@ void log_output(log_level level, const char *message, ...)
 
     char out_message2[32000];
     sprintf(out_message2, "%s%s\n", level_strings[level], out_message);
-    printf("%s", out_message2);
+
+    if (isError)
+    {
+        platform_console_write(out_message2, level);
+    }
+    else
+    {
+        platform_console_write_error(out_message2, level);
+    }
 }
 
 void report_assertion_failure(const char *expression, const char *message, const char *file, i32 line)

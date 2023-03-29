@@ -25,34 +25,34 @@ typedef enum log_level
 b8 init_logging();
 void stop_logging();
 
-DENSITY void log_output(log_level level, const char *message, ...);
+__declspec(dllexport) void log_output(log_level level, const char *message, ...);
 
-#define DFATAL(message, ...) log_output(LOG_LEVEL_FATAl, message, ##__VA_ARGS__);
+#define D_FATAL(message, ...) log_output(LOG_LEVEL_FATAl, message, ##__VA_ARGS__);
 
-#ifndef DERROR
-#define DERROR(message, ...) log_output(LOG_LEVEL_ERROR, message, ##__VA_ARGS__);
+#ifndef D_ERROR
+#define D_ERROR(message, ...) log_output(LOG_LEVEL_ERROR, message, ##__VA_ARGS__);
 #endif
 
 #if LOG_WARN_ENABLED == 1
-#define DWARN(message, ...) log_output(LOG_LEVEL_WARN, message, ##__VA_ARGS__);
+#define D_WARN(message, ...) log_output(LOG_LEVEL_WARN, message, ##__VA_ARGS__);
 #else
-#define DWARN(message, ...)
+#define D_WARN(message, ...)
 #endif
 
 #if LOG_INFO_ENABLED == 1
-#define DINFO(message, ...) log_output(LOG_LEVEL_INFO, message, ##__VA_ARGS__);
+#define D_INFO(message, ...) log_output(LOG_LEVEL_INFO, message, ##__VA_ARGS__);
 #else
-#define DINFO(message, ...)
+#define D_INFO(message, ...)
 #endif
 
 #if LOG_DEBUG_ENABLED == 1
-#define DDEBUG(message, ...) log_output(LOG_LEVEL_DEBUG, message, ##__VA_ARGS__);
+#define D_DEBUG(message, ...) log_output(LOG_LEVEL_DEBUG, message, ##__VA_ARGS__);
 #else
-#define DDEBUG(message, ...)
+#define D_DEBUG(message, ...)
 #endif
 
 #if LOG_TRACE_ENABLED == 1
-#define DTRACE(message, ...) log_output(LOG_LEVEL_TRACE, message, ##__VA_ARGS__);
+#define D_TRACE(message, ...) log_output(LOG_LEVEL_TRACE, message, ##__VA_ARGS__);
 #else
-#define DTRACE(message, ...)
+#define D_TRACE(message, ...)
 #endif
