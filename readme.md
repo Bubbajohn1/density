@@ -12,4 +12,14 @@
 
 # Building
 
+## Windows:
+
+**In order to run you **must** have [VulkanSDK,](https://vulkan.lunarg.com/) and [clang](https://llvm.org/builds/)**
+
+```
+
+```
+
+## Linux:
+
 # Running
