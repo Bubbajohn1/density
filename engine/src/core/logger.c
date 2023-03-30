@@ -24,25 +24,26 @@ void log_output(log_level level, const char *message, ...)
                                     "[DEBUG]: ",
                                     "[TRACE]: "};
     b8 isError = level < LOG_LEVEL_WARN;
+    i32 max_char = 32000;
 
-    char out_message[32000];
+    char out_message[max_char];
     memset(out_message, 0, sizeof(out_message));
 
     __builtin_va_list arg_ptr;
     va_start(arg_ptr, message);
-    vsnprintf(out_message, 32000, message, arg_ptr);
+    vsnprintf(out_message, max_char, message, arg_ptr);
     va_end(arg_ptr);
 
-    char out_message2[32000];
+    char out_message2[max_char];
     sprintf(out_message2, "%s%s\n", level_strings[level], out_message);
 
     if (isError)
     {
-        platform_console_write(out_message2, level);
+        platform_console_write_error(out_message2, level);
     }
     else
     {
-        platform_console_write_error(out_message2, level);
+        platform_console_write(out_message2, level);
     }
 }
 
