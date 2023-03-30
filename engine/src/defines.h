@@ -1,5 +1,7 @@
 #pragma once
 
+#define DENSITY __declspec(dllexport)
+
 // Unsigned int types.
 typedef unsigned char u8;
 typedef unsigned short u16;
@@ -80,20 +82,4 @@ STATIC_ASSERT(sizeof(f64) == 8, "Expected f64 to be 8 bytes.");
 #endif
 #else
 #error "Unknown platform!"
-#endif
-
-#ifdef DEXPORT
-// Exports
-#ifdef _MSC_VER
-#define DENSITY __declspec(dllexport)
-#else
-#define DENSITY __attribute__((visibility("default")))
-#endif
-#else
-// Imports
-#ifdef _MSC_VER
-#define DENSITY __declspec(dllimport)
-#else
-#define DENSITY
-#endif
 #endif

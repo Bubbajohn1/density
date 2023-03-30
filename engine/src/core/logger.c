@@ -6,7 +6,7 @@
 #include <string.h>
 #include <stdarg.h>
 
-b8 init_logging()
+b8 initialize_logging()
 {
     return TRUE;
 }

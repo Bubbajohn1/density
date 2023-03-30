@@ -7,7 +7,7 @@
 #define LOG_DEBUG_ENABLED 1
 #define LOG_TRACE_ENABLED 1
 
-#if KRELEASE == 1
+#if DRELEASE == 1
 #define LOG_DEBUG_ENABLED 0
 #define LOG_TRACE_ENABLED 0
 #endif
@@ -22,10 +22,10 @@ typedef enum log_level
     LOG_LEVEL_TRACE = 5
 } log_level;
 
-b8 init_logging();
+b8 initialize_logging();
 void stop_logging();
 
-__declspec(dllexport) void log_output(log_level level, const char *message, ...);
+DENSITY void log_output(log_level level, const char *message, ...);
 
 #define D_FATAL(message, ...) log_output(LOG_LEVEL_FATAl, message, ##__VA_ARGS__);
 
