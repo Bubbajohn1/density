@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include "application.h"
 #include "platform/platform.h"
 #include "logger.h"
@@ -36,6 +38,8 @@ b8 application_create(game *game_inst)
     D_INFO("Test Message");
     D_DEBUG("Test message");
     D_TRACE("Test Message");
+
+    printf("\n\n");
 
     state.is_running = TRUE;
     state.is_suspended = FALSE;
