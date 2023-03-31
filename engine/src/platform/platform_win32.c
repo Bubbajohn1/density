@@ -3,6 +3,7 @@
 #if DPLATFORM_WINDOWS
 
 #include "core/logger.h"
+#include "core/density_memory.h"
 
 #include <windows.h>
 #include <windowsx.h>
@@ -28,7 +29,8 @@ b8 platform_startup(
     i32 width,
     i32 height)
 {
-    plat_state->internal_state = malloc(sizeof(internal_state));
+    // plat_state->internal_state = malloc(sizeof(internal_state));
+    plat_state->internal_state = density_allocate_memory(sizeof(internal_state), MEMORY_TAG_PLATFORM);
     internal_state *state = (internal_state *)plat_state->internal_state;
 
     state->h_instance = GetModuleHandleA(0);

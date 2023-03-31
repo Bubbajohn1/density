@@ -2,6 +2,7 @@
 #include "platform/platform.h"
 #include "logger.h"
 #include "game_types.h"
+#include "core/density_memory.h"
 
 typedef struct application_state
 {
@@ -27,7 +28,7 @@ b8 application_create(game *game_inst)
 
     state.game_inst = game_inst;
 
-    initialize_logging();
+    // initialize_logging();
 
     D_FATAL("Test message");
     D_ERROR("Test Message");
@@ -64,6 +65,8 @@ b8 application_create(game *game_inst)
 
 b8 application_run()
 {
+    D_INFO(get_memory_usage_str());
+
     while (state.is_running)
     {
         if (!platform_pump_messages(&state.platform))
