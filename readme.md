@@ -24,4 +24,3 @@ build-all.bat
 
 # Running
 **Open ``` bin ( if you ran the build ) ``` folder and run the testbed exe.**
-**
