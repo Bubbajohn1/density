@@ -14,12 +14,13 @@
 
 ## Windows:
 
-**In order to run you **must** have [VulkanSDK,](https://vulkan.lunarg.com/) and [clang](https://llvm.org/builds/)**
+**In order to build you **must** have [VulkanSDK,](https://vulkan.lunarg.com/) and [clang](https://llvm.org/builds/)**
 
 ```
-
+build-all.bat
 ```
 
 ## Linux:
 
 # Running
+**Open ``` bin ``` folder and run the testbed exe.**
