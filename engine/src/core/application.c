@@ -37,9 +37,7 @@ b8 application_create(game *game_inst)
     D_WARN("Test message");
     D_INFO("Test Message");
     D_DEBUG("Test message");
-    D_TRACE("Test Message");
-
-    printf("\n\n");
+    D_TRACE("Test Message\n\n");
 
     state.is_running = TRUE;
     state.is_suspended = FALSE;
