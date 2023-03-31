@@ -14,7 +14,7 @@
 
 ## Windows:
 
-**In order to build you **must** have [VulkanSDK,](https://vulkan.lunarg.com/) and [clang](https://llvm.org/builds/)**
+**In order to build you **must** have [VulkanSDK,](https://vulkan.lunarg.com/) and [clang](https://llvm.org/builds/) installed.**
 
 ```
 build-all.bat
