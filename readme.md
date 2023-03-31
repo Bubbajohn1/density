@@ -23,4 +23,5 @@ build-all.bat
 ## Linux:
 
 # Running
-**Open ``` bin ``` folder and run the testbed exe.**
+**Open ``` bin ( if you ran the build ) ``` folder and run the testbed exe.**
+**
