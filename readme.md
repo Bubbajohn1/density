@@ -1,6 +1,6 @@
 # **Density**
 
-**Open-Source game engine written in C.**
+**Open-Source game engine written in C using the Kohi game engine.**
 
 ![last commit](https://img.shields.io/github/last-commit/Bubbajohn1/density?color=blue)
 ![size](https://img.shields.io/github/languages/code-size/Bubbajohn1/density)
